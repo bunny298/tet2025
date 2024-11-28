@@ -38,7 +38,7 @@ h1 {
         background-size: cover;
     }
     .container {
-        font-size: xx-large;
+        font-size: x-large;
         margin-top: 300px;
         margin-bottom: 0;
         margin-left: auto;
@@ -53,8 +53,27 @@ h1 {
     overflow: hidden;
     background-color: #e82219;
     border-radius: 30%;
-    justify-content: center;
+    width: 21%;
+    height:0;
+    margin: 3% 0 3% 4%;
+    position: relative;
+    padding-bottom: 20%;
   }
+    .clock .num {
+    font-size: 130%;
+    font-weight: 400;
+    height: 0;
+    line-height: 200%;
+    }
+  .clock .text {
+    font-size: 70%;
+    text-transform: uppercase;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 180%;
+    }
 }
 
 @media (max-width: 768px) {
