@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html
+<html>
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Đếm ngày đến TẾT 2025!!</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
     <script>
@@ -21,10 +20,15 @@
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerHTML = days + "Ngày";
-            document.getElementById("hours").innerHTML = hours + "Giờ";
-            document.getElementById("minutes").innerHTML = minutes + "Phút";
-            document.getElementById("seconds").innerHTML = seconds + "Giây";
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            document.getElementById("days").setAttribute("data-label", "NGÀY");
+            document.getElementById("hours").setAttribute("data-label", "GIỜ");
+            document.getElementById("minutes").setAttribute("data-label", "PHÚT");
+            document.getElementById("seconds").setAttribute("data-label", "GIÂY");
 
             if (distance < 0) {
                 clearInterval(x);
