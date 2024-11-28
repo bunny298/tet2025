@@ -22,10 +22,13 @@ body {
 @media (min-width: 769px) {
     body {
         background-image: url(tetpc.png);
-        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
     .container{
-        margin-top: 500px;
+        margin-top: 300px;
+        font-size: xx-large;
     }
 }
 
@@ -34,8 +37,10 @@ body {
     body {
         background-image: url(tetdt.png);
         background-size: contain;
+        background-repeat: no-repeat;
     }
     .container{
-        margin-top: 300px;
+        margin-top: 250px;
+        font-size: x-large;
     }
 }
