@@ -1,10 +1,9 @@
 @font-face {
-    font-family: 'Jumbox';
-    src: local('Jumbox Inner'), local('Jumbox-Inner'),
-        url('JumboxInner.ttf') format('truetype');
+    font-family: 'JumboBox';
+    src: url('jumbox.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
