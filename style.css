@@ -28,6 +28,10 @@ h1 {
     gap: 10px;
 }
 
+::after {
+    margin: 10px;
+}
+
 #days, #hours, #minutes, #seconds {
     display: flex;
     flex-direction: column;
@@ -35,8 +39,8 @@ h1 {
     justify-content: center;
     width: 80px;
     height: 80px;
-    background: linear-gradient(to bottom, red 50%, blue 50%);
-    color: yellow;
+    background: linear-gradient(to bottom, red 60%, blue 40%);
+    color: #F7D29D;
     font-family: 'jumbox', sans-serif;
     font-size: 2em;
     border-radius: 15px;
@@ -45,7 +49,7 @@ h1 {
 #days::after, #hours::after, #minutes::after, #seconds::after {
     content: attr(data-label);
     font-size: 0.5em;
-    color: blue;
+    color: #F7D29D;
 }
 
 @media (min-width: 769px) {
