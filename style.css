@@ -25,17 +25,17 @@ body {
         background-size: contain;
     }
     .container{
-        margin-top: 300px;
+        margin-top: 500px;
     }
 }
 
 
 @media (max-width: 768px) {
     body {
-    background-image: url(tetdt.png);
-    background-size: contain;
+        background-image: url(tetdt.png);
+        background-size: contain;
     }
     .container{
-        margin-top: 500px;
+        margin-top: 300px;
     }
 }
