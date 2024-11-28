@@ -28,29 +28,6 @@ h1 {
     gap: 10px;
 }
 
-::after {
-    margin: 10px;
-}
-
-#days, #hours, #minutes, #seconds {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(to bottom, red 60%, blue 40%);
-    color: #F7D29D;
-    font-family: 'jumbox', sans-serif;
-    font-size: 2em;
-    border-radius: 15px;
-}
-
-#days::after, #hours::after, #minutes::after, #seconds::after {
-    content: attr(data-label);
-    font-size: 0.5em;
-    color: #F7D29D;
-}
 
 @media (min-width: 769px) {
     body {
@@ -83,4 +60,31 @@ h1 {
         font-size: 2.6rem;
         color: #ffc97b;
     }
+}
+.clock {
+    float: left;
+    overflow: hidden;
+    background-color: #e82219;
+    color: yellow;
+    border-radius: 30%;
+    position: relative;
+    width: 20%;
+    height: 0;
+    padding-bottom: 20%;
+    margin: 3% 0 3% 4%;
+}
+.clock .num {
+    font-size: 130%;
+    font-weight: 400;
+    height: 0;
+    line-height: 200%;
+}
+.clock .text {
+    font-size: 70%;
+    text-transform: uppercase;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 180%;
 }
