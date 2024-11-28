@@ -20,14 +20,16 @@ body {
 
 
 @media (min-width: 769px) {
-    .container {
-
+    body {
+    background-image: url(tetpc.png);
+    background-size: contain;
     }
 }
 
 
 @media (max-width: 768px) {
-    .container {
-
+    body {
+    background-image: url(tetdt.png);
+    background-size: contain;
     }
 }
