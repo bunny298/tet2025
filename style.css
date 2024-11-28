@@ -30,6 +30,11 @@ body {
         margin-top: 300px;
         font-size: xx-large;
     }
+    #days, #hours, #minutes, #seconds {
+        background: antiquewhite;
+        padding: 10px;
+        border-radius: 10px;
+}
 }
 
 
@@ -43,4 +48,9 @@ body {
         margin-top: 250px;
         font-size: x-large;
     }
+    #days, #hours, #minutes, #seconds {
+        background: antiquewhite;
+        padding: 5px;
+        border-radius: 10px;
+}
 }
