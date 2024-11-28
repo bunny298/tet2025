@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'JumboBox';
+    font-family: 'jumbox';
     src: url('jumbox.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    font-family: 'JumboBox', sans-serif;
+    font-family: 'jumbox', sans-serif;
     margin-bottom: 30px;
     font-size: 2.5rem;
 }
