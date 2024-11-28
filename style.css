@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     margin: 0;
@@ -16,37 +17,52 @@ body {
 
 h1 {
     margin-bottom: 30px;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
+/* Countdown Timer */
 #countdown {
     display: flex;
-    gap: 10px;
     justify-content: center;
+    gap: 20px;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .digit {
     position: relative;
-    width: 60px;
-    height: 90px;
+    width: 80px;
+    height: 120px;
     perspective: 1000px;
+    overflow: hidden;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.digit span {
+.digit .top,
+.digit .bottom {
     position: absolute;
     width: 100%;
     height: 50%;
     background: #333;
     color: #fff;
+    font-size: 2rem;
     text-align: center;
-    line-height: 45px;
-    font-size: 1.5rem;
+    line-height: 60px;
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
     backface-visibility: hidden;
-    transition: transform 0.5s ease-in-out;
 }
 
 .digit .top {
@@ -62,12 +78,15 @@ h1 {
     background: #222;
 }
 
+/* Flip Animation */
 .digit.flip .top {
     transform: rotateX(-180deg);
+    transition: transform 0.5s ease-in-out;
 }
 
 .digit.flip .bottom {
     transform: rotateX(0deg);
+    transition: transform 0.5s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -80,12 +99,17 @@ h1 {
     }
 
     .digit {
-        width: 40px;
-        height: 60px;
+        width: 50px;
+        height: 80px;
     }
 
-    .digit span {
-        font-size: 1rem;
-        line-height: 30px;
+    .digit .top,
+    .digit .bottom {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+
+    label {
+        font-size: 0.8rem;
     }
 }
