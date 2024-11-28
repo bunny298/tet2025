@@ -17,21 +17,33 @@
     <div class="container">
         <h1>Tết Nguyên Đán 2025</h1>
         <div id="countdown">
-            <div class="digit" id="days">
-                <span class="top">0</span>
-                <span class="bottom">0</span>
+            <div class="time-block">
+                <div class="digit" id="days">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <label>Ngày</label>
             </div>
-            <div class="digit" id="hours">
-                <span class="top">0</span>
-                <span class="bottom">0</span>
+            <div class="time-block">
+                <div class="digit" id="hours">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <label>Giờ</label>
             </div>
-            <div class="digit" id="minutes">
-                <span class="top">0</span>
-                <span class="bottom">0</span>
+            <div class="time-block">
+                <div class="digit" id="minutes">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <label>Phút</label>
             </div>
-            <div class="digit" id="seconds">
-                <span class="top">0</span>
-                <span class="bottom">0</span>
+            <div class="time-block">
+                <div class="digit" id="seconds">
+                    <div class="top">0</div>
+                    <div class="bottom">0</div>
+                </div>
+                <label>Giây</label>
             </div>
         </div>
     </div>
@@ -41,14 +53,14 @@
         function startCountdown() {
             const targetDate = new Date("Jan 29, 2025 00:00:00").getTime();
 
-            const updateDigit = (id, value) => {
+            const updateDigit = (id, newValue) => {
                 const digit = document.getElementById(id);
                 const top = digit.querySelector(".top");
                 const bottom = digit.querySelector(".bottom");
 
-                if (top.textContent !== value) {
-                    top.textContent = value;
-                    bottom.textContent = value;
+                if (top.textContent !== newValue) {
+                    bottom.textContent = top.textContent; // Gán giá trị hiện tại xuống bottom
+                    top.textContent = newValue; // Cập nhật top với giá trị mới
                     digit.classList.add("flip");
                     setTimeout(() => digit.classList.remove("flip"), 500);
                 }
@@ -64,10 +76,10 @@
                     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                    updateDigit("days", days);
-                    updateDigit("hours", hours);
-                    updateDigit("minutes", minutes);
-                    updateDigit("seconds", seconds);
+                    updateDigit("days", days.toString());
+                    updateDigit("hours", hours.toString().padStart(2, "0"));
+                    updateDigit("minutes", minutes.toString().padStart(2, "0"));
+                    updateDigit("seconds", seconds.toString().padStart(2, "0"));
                 } else {
                     document.querySelector("#countdown").innerHTML = "<h2>Chúc Mừng Năm Mới!</h2>";
                 }
