@@ -1,50 +1,80 @@
 <!DOCTYPE html>
-<html
+<html lang="en">
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
     <title>Đếm ngày đến TẾT 2025!!</title>
 
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./style.css">
-    <script>
-        var countDownDate = new Date("Jan 29, 2025 00:00:00").getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days + "Ngày";
-            document.getElementById("hours").innerHTML = hours + "Giờ";
-            document.getElementById("minutes").innerHTML = minutes + "Phút";
-            document.getElementById("seconds").innerHTML = seconds + "Giây";
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("days").innerHTML = "";
-                document.getElementById("hours").innerHTML = "";
-                document.getElementById("minutes").innerHTML = "";
-                document.getElementById("seconds").innerHTML = "Chúc Mừng Năm Mới!";
-            }
-        }, 1000);
-    </script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Tết Nguyên Đán 2025</h1>
         <div id="countdown">
-            <span id="days"></span>
-            <span id="hours"></span>
-            <span id="minutes"></span>
-            <span id="seconds"></span>
+            <div class="digit" id="days">
+                <span class="top">0</span>
+                <span class="bottom">0</span>
+            </div>
+            <div class="digit" id="hours">
+                <span class="top">0</span>
+                <span class="bottom">0</span>
+            </div>
+            <div class="digit" id="minutes">
+                <span class="top">0</span>
+                <span class="bottom">0</span>
+            </div>
+            <div class="digit" id="seconds">
+                <span class="top">0</span>
+                <span class="bottom">0</span>
+            </div>
         </div>
     </div>
+
+    <!-- Script -->
+    <script>
+        function startCountdown() {
+            const targetDate = new Date("Jan 29, 2025 00:00:00").getTime();
+
+            const updateDigit = (id, value) => {
+                const digit = document.getElementById(id);
+                const top = digit.querySelector(".top");
+                const bottom = digit.querySelector(".bottom");
+
+                if (top.textContent !== value) {
+                    top.textContent = value;
+                    bottom.textContent = value;
+                    digit.classList.add("flip");
+                    setTimeout(() => digit.classList.remove("flip"), 500);
+                }
+            };
+
+            setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance >= 0) {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    updateDigit("days", days);
+                    updateDigit("hours", hours);
+                    updateDigit("minutes", minutes);
+                    updateDigit("seconds", seconds);
+                } else {
+                    document.querySelector("#countdown").innerHTML = "<h2>Chúc Mừng Năm Mới!</h2>";
+                }
+            }, 1000);
+        }
+
+        startCountdown();
+    </script>
 </body>
 </html>
