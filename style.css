@@ -1,4 +1,73 @@
-.clock {
+@font-face {
+    font-family: 'jumbox';
+    src: url('jumbox.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'jumbox', sans-serif;
+    margin-bottom: 30px;
+}
+
+.container {
+    text-align: center;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+@media (min-width: 769px) {
+    body {
+        background-image: url(tetpc.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .container {
+        margin-top: 300px;
+        font-size: xx-large;
+    }
+    h1 {
+        font-size: 2em;
+        color: #f7d29d;
+    }
+  .clock{
+    float: left;
+    overflow: hidden;
+    background-color: #e82219;
+    border-radius: 30%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url(tetdt.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .container {
+        margin-top: 250px;
+        font-size: x-large;
+    }
+    h1 {
+        font-size: 2.6rem;
+        color: #ffc97b;
+    }
+  .clock {
     float: left;
     overflow: hidden;
     background-color: #e82219;
@@ -9,14 +78,14 @@
     height: 0;
     padding-bottom: 20%;
     margin: 3% 0 3% 4%;
-}
-.clock .num {
+    }
+  .clock .num {
     font-size: 130%;
     font-weight: 400;
     height: 0;
     line-height: 200%;
-}
-.clock .text {
+    }
+  .clock .text {
     font-size: 70%;
     text-transform: uppercase;
     background-color: blue;
@@ -24,4 +93,5 @@
     bottom: 0;
     width: 100%;
     line-height: 180%;
+    }
 }
