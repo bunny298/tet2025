@@ -23,13 +23,30 @@ h1 {
 }
 
 #countdown {
-
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 #days, #hours, #minutes, #seconds {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom, red 50%, blue 50%);
+    color: yellow;
+    font-family: 'jumbox', sans-serif;
+    font-size: 2em;
+    border-radius: 15px;
 }
 
+#days::after, #hours::after, #minutes::after, #seconds::after {
+    content: attr(data-label);
+    font-size: 0.5em;
+    color: blue;
+}
 
 @media (min-width: 769px) {
     body {
@@ -38,14 +55,9 @@ h1 {
         background-position: center;
         background-size: cover;
     }
-    .container{
+    .container {
         margin-top: 300px;
         font-size: xx-large;
-    }
-    #days, #hours, #minutes, #seconds {
-        background: antiquewhite;
-        padding: 10px;
-        border-radius: 10px;
     }
     h1 {
         font-size: 2em;
@@ -53,21 +65,15 @@ h1 {
     }
 }
 
-
 @media (max-width: 768px) {
     body {
         background-image: url(tetdt.png);
         background-size: contain;
         background-repeat: no-repeat;
     }
-    .container{
+    .container {
         margin-top: 250px;
         font-size: x-large;
-    }
-    #days, #hours, #minutes, #seconds {
-        background: antiquewhite;
-        padding: 5px;
-        border-radius: 10px;
     }
     h1 {
         font-size: 2.6rem;
