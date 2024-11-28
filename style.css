@@ -3,54 +3,89 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(tetpc.png) center/cover no-repeat;
+    color: #fff;
 }
 
 .container {
     text-align: center;
 }
 
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
 #countdown {
-
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
-#days, #hours, #minutes, #seconds {
-
+.digit {
+    position: relative;
+    width: 60px;
+    height: 90px;
+    perspective: 1000px;
 }
 
-
-@media (min-width: 769px) {
-    body {
-        background-image: url(tetpc.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-    .container{
-        margin-top: 300px;
-        font-size: xx-large;
-    }
-    #days, #hours, #minutes, #seconds {
-        background: antiquewhite;
-        padding: 10px;
-        border-radius: 10px;
-}
+.digit span {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.5s ease-in-out;
 }
 
+.digit .top {
+    top: 0;
+    transform-origin: bottom;
+    background: #555;
+}
+
+.digit .bottom {
+    bottom: 0;
+    transform-origin: top;
+    transform: rotateX(180deg);
+    background: #222;
+}
+
+.digit.flip .top {
+    transform: rotateX(-180deg);
+}
+
+.digit.flip .bottom {
+    transform: rotateX(0deg);
+}
 
 @media (max-width: 768px) {
     body {
-        background-image: url(tetdt.png);
-        background-size: contain;
-        background-repeat: no-repeat;
+        background: url(tetdt.png) center/contain no-repeat;
     }
-    .container{
-        margin-top: 250px;
-        font-size: x-large;
+
+    h1 {
+        font-size: 1.5rem;
     }
-    #days, #hours, #minutes, #seconds {
-        background: antiquewhite;
-        padding: 5px;
-        border-radius: 10px;
-}
+
+    .digit {
+        width: 40px;
+        height: 60px;
+    }
+
+    .digit span {
+        font-size: 1rem;
+        line-height: 30px;
+    }
 }
