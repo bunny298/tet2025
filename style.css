@@ -49,6 +49,7 @@ h1 {
         color: #f7d29d;
     }
   .clock{
+    font-family: 'jumbox', sans-serif;
     float: left;
     overflow: hidden;
     background-color: #ffaaaa;
@@ -61,10 +62,9 @@ h1 {
     color: yellow;
   }
     .clock .num {
-    font-size: 130%;
+    font-size: 160%;
     font-weight: 400;
     height: 0;
-    line-height: 200%;
     }
   .clock .text {
     font-size: 70%;
@@ -95,6 +95,7 @@ h1 {
         color: #ffc97b;
     }
   .clock {
+    font-family: 'jumbox', sans-serif;
     float: left;
     overflow: hidden;
     background-color: #e82219;
@@ -107,10 +108,9 @@ h1 {
     margin: 3% 0 3% 4%;
     }
   .clock .num {
-    font-size: 130%;
+    font-size: 160%;
     font-weight: 400;
     height: 0;
-    line-height: 200%;
     }
   .clock .text {
     font-size: 70%;
