@@ -51,13 +51,14 @@ h1 {
   .clock{
     float: left;
     overflow: hidden;
-    background-color: #e82219;
+    background-color: #ffaaaa;
     border-radius: 30%;
     width: 21%;
     height:0;
     margin: 3% 0 3% 4%;
     position: relative;
     padding-bottom: 20%;
+    color: yellow;
   }
     .clock .num {
     font-size: 130%;
