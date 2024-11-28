@@ -64,8 +64,11 @@ h1 {
         background-repeat: no-repeat;
     }
     .container {
-        margin-top: 250px;
         font-size: x-large;
+        margin-top: 250px;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
     h1 {
         font-size: 2.6rem;
