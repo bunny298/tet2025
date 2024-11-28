@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php bloginfo('name'); ?></title>
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+    <script>
+        var countDownDate = new Date("Jan 29, 2025 00:00:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days + "Ngày";
+            document.getElementById("hours").innerHTML = hours + "Giờ";
+            document.getElementById("minutes").innerHTML = minutes + "Phút";
+            document.getElementById("seconds").innerHTML = seconds + "Giây";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "";
+                document.getElementById("hours").innerHTML = "";
+                document.getElementById("minutes").innerHTML = "";
+                document.getElementById("seconds").innerHTML = "Chúc Mừng Năm Mới!";
+            }
+        }, 1000);
+    </script>
+</head>
+<body <?php body_class(); ?>>
+    <div class="container">
+        <h1>Tết Nguyên Đán 2025</h1>
+        <div id="countdown">
+            <span id="days"></span>
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </div>
+    </div>
+</body>
+</html>
